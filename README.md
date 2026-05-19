@@ -3,6 +3,9 @@
 
 **Del repositorio [docker tutorial](https://github.com/joseluisgs/docker-tutorial/tree/master) implementar:**
 
+>[!IMPORTANT]
+> Siempre antes de ejecutar cualquier comando, desplazarse a la carpeta específica con `cd ./ejemplos/ejem_numero`
+
 ### ejem01:
 **1.** Editar dentro del contenedor de Docker
 - Instalar un editor de texto como Vim o Nano
@@ -41,7 +44,12 @@
 - Como no se puede conectar por error en GLIBC por la versión de `php:7.0`, actualizar a `php:8.2`
 - Relanzar la imagen de docker
 
-![editar desde VS Code](/images/01-image4.png)
+---
+1. Editar el html desde VSCode con Remote Explorer
+    ![editar desde VS Code](/images/01-image4.png)
+
+>[!TIP]
+>El archivo `index.html` a modificar se encuentra en `/var/www/html`, aunque resulta lógico al revisar el `run.sh`
 
 
 ### ejem02
@@ -50,12 +58,73 @@
 - Ejecutar manualmente en la terminal de VS Code
 - Subir captura de pantalla del despliegue de docker
 
-![ejecución del contenedor](/images/02-image3.png)
+---
+1. Modificamos el archivo agregando un doble slash en `//var/` para que git bash no la convierta en una ruta de windows por defecto.
 
-![ejecución del ejem02](/images/02-image4.png)
+    ![ejecución del ejem02](/images/02-image1.png)
 
+    ![ejecución en docker del ejem02](/images/02-image2.png)
+
+### ejem03
+- Correr el script `run.sh`
+- Evaluar inconvenientes de correr scripts de S.O. (Ejemplo: portabilidad)
+
+---
+1. Al ejecutar el script creamos una red con dos contenedores que se conectan por la red interna creada.
+
+    ![ejecución del script ejem03](/images/03-image1.png)
+
+    ![ejecución del ejem03](/images/03-image2.png)
+
+2. Inconvenientes:
+- Poca portabilidad: Dependen del sistema (Linux vs Windows), sintaxis, rutas y comandos diferentes; fallan al cambiar de SO.
+
+- No son idempotentes: Al repetirlos, fallan si ya existe un recurso (carpeta, red, contenedor) y dejan el sistema en estado inconsistente.
+
+- Manejo de errores deficiente: Siguen ejecutándose aunque falle un paso, generando errores difíciles de entender y sistemas rotos.
+
+- Seguridad riesgosa: Requieren permisos elevados (root/admin), montan directorios del host (bind mount) y pueden exponer contraseñas o modificar archivos del anfitrión.
+
+- Dependencias externas: Asumen herramientas instaladas (Docker, Bash, curl, etc.) sin validar; fallan si no están.
+
+- Mantenimiento tedioso: Código espagueti, difícil de depurar; en equipos mixtos toca mantener múltiples scripts (.sh, .ps1, .bat).
 
 >[!TIP]
-> No es requisito modificar todas las filas del archivo, con solo agregar un doble slash en `//var/` para que git bash no la convierta en una ruta de windows por defecto es suficiente.
+>La industria ha migrado a herramientas declarativas como Docker Compose, ya que es portable, idempotente y maneja todo el ciclo de vida con un solo comando. Además de que no requiere lógica imperativa ni manejo manual de errores.
+
+---
+# Actividad DAD 12-05
+### ejem04
+- Ejecutar el docker-compose:
+
+---
+1. Ejecución:
+    ``` bash
+    docker-compose up -d
+    ```
+
+    ![ejecución del docker-compose ejem04](/images/04-image1.png)
+
+    ![ejecución del ejem04](/images/04-image2.png)
+
+
+### ejem07 
+- Ejecutar el docker-compose
+
+>[!IMPORTANT]
+>Recordar desplazarde por la estructura de carpetas: `cd ./ejemplos/ejem07/docker/phpmyadmin`
+
+--- 
+1. Ejecución con:
+    ``` bash
+    docker-compose up -d
+    ```
+
+    ![ejecución docker-compose ejem07](/images/07-image1.png)
+
+    ![ejecución docker-compose ejem07](/images/07-image2.png)
+
+    ![ejecución del ejem07](/images/07-image3.png)
+
 
 ### [**Subir ⬆**](#actividad-dad-05-05)
