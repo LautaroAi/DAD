@@ -120,7 +120,7 @@
     docker-compose up -d
     ```
 
-    ![ejecución docker-compose ejem07](/images/07-image1.png)
+    ![ejecución docker-compose ejem07](/images/07-Image1.png)
 
     ![ejecución docker-compose ejem07](/images/07-image2.png)
 
