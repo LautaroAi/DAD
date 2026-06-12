@@ -124,7 +124,18 @@
 
     ![ejecución docker-compose ejem07](/images/07-image2.png)
 
-    ![ejecución del ejem07](/images/07-image3.png)
+    ![ejecución docker-compose, con contenedores ejem07](/images/7-image3.png)
+
+2. Ingresar a php
+
+    ![Creación de la tabla - ejem07](/images/7-image4.png)
+
+3. Crear la tabla que está en `mariadb/sql/init-db.sql`
+    ![Creación de la tabla - ejem07](/images/7-image5.png)
+
+    ![Tabla - ejem07](/images/7-image6.png)
+
+    ![Conexión frontend con db - ejem07](/images/7-image7.png)
 
 
 ### [**Subir ⬆**](#actividad-dad-05-05)
