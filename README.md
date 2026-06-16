@@ -1,14 +1,17 @@
-###  Alumno: Lautaro Rivieri
+# Diseño y Arquitectura de Despliegue
 
+### Alumno: Lautaro Rivieri
 
 **Del repositorio [docker tutorial](https://github.com/joseluisgs/docker-tutorial/tree/master) implementar:**
 
 >[!IMPORTANT]
 > Siempre antes de ejecutar cualquier comando, desplazarse a la carpeta específica con `cd ./ejemplos/ejem_numero`
 
----
-# Actividad DAD 05-05
+
+# Actividad 05-05
+
 ### ejem01:
+
 **1.** Editar dentro del contenedor de Docker
 - Instalar un editor de texto como Vim o Nano
 - Para instalar en linux un programa se debe actualizar el listado de repositorios de APT
@@ -95,11 +98,10 @@
 >La industria ha migrado a herramientas declarativas como Docker Compose, ya que es portable, idempotente y maneja todo el ciclo de vida con un solo comando. Además de que no requiere lógica imperativa ni manejo manual de errores.
 
 ---
-# Actividad DAD 12-05
-### ejem04:
-- Ejecutar el docker-compose
+# Actividad 12-05
 
----
+### ejem04:
+
 1. Ejecución:
     ``` bash
     docker-compose up -d
@@ -111,9 +113,7 @@
 
 
 ### ejem07:
-- Ejecutar el docker-compose
 
---- 
 1. Ejecución:
     ``` bash
     docker-compose up -d
@@ -137,7 +137,8 @@
     ![Conexión frontend con db - ejem07](/images/7-image7.png)
 
 ---
-# Actividad DAD 16-06
+# Actividad 16-06
+
 ### ejem09:
 
 ### Proxy Reverse Con Docker Compose
@@ -169,4 +170,4 @@ Todos los servicios se comunican a través de una red interna mi-red (tipo bridg
 ![site1 y site2 - ejem09](/images/9-image2.png)
 
 
-### [**Subir ⬆**](#actividad-dad-05-05)
+### [**Subir ⬆**](#diseño-y-arquitectura-de-despliegue)
