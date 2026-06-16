@@ -1,11 +1,13 @@
-# Actividad DAD 05-05
 ###  Alumno: Lautaro Rivieri
+
 
 **Del repositorio [docker tutorial](https://github.com/joseluisgs/docker-tutorial/tree/master) implementar:**
 
 >[!IMPORTANT]
 > Siempre antes de ejecutar cualquier comando, desplazarse a la carpeta específica con `cd ./ejemplos/ejem_numero`
 
+---
+# Actividad DAD 05-05
 ### ejem01:
 **1.** Editar dentro del contenedor de Docker
 - Instalar un editor de texto como Vim o Nano
@@ -52,7 +54,7 @@
 >El archivo `index.html` a modificar se encuentra en `/var/www/html`, aunque resulta lógico al revisar el `run.sh`
 
 
-### ejem02
+### ejem02:
 - `run.sh` es un archivo para ejecutar en una terminal de linux sh o bash
 - Interpretar los comandos en run.sh
 - Ejecutar manualmente en la terminal de VS Code
@@ -65,7 +67,7 @@
 
     ![ejecución en docker del ejem02](/images/02-image2.png)
 
-### ejem03
+### ejem03:
 - Correr el script `run.sh`
 - Evaluar inconvenientes de correr scripts de S.O. (Ejemplo: portabilidad)
 
@@ -94,8 +96,8 @@
 
 ---
 # Actividad DAD 12-05
-### ejem04
-- Ejecutar el docker-compose:
+### ejem04:
+- Ejecutar el docker-compose
 
 ---
 1. Ejecución:
@@ -108,23 +110,20 @@
     ![ejecución del ejem04](/images/04-image2.png)
 
 
-### ejem07 
+### ejem07:
 - Ejecutar el docker-compose
 
->[!IMPORTANT]
->Recordar desplazarde por la estructura de carpetas: `cd ./ejemplos/ejem07/docker/phpmyadmin`
-
 --- 
-1. Ejecución con:
+1. Ejecución:
     ``` bash
     docker-compose up -d
     ```
 
-    ![ejecución docker-compose ejem07](/images/07-Image1.png)
+    ![ejecución docker-compose - ejem07](/images/07-image1.png)
 
-    ![ejecución docker-compose ejem07](/images/07-image2.png)
+    ![ejecución docker-compose - ejem07](/images/07-image2.png)
 
-    ![ejecución docker-compose, con contenedores ejem07](/images/7-image3.png)
+    ![contenedores - ejem07](/images/7-image3.png)
 
 2. Ingresar a php
 
@@ -136,6 +135,38 @@
     ![Tabla - ejem07](/images/7-image6.png)
 
     ![Conexión frontend con db - ejem07](/images/7-image7.png)
+
+---
+# Actividad DAD 16-06
+### ejem09:
+
+### Proxy Reverse Con Docker Compose
+
+Este ejemplo configura un proxy reverso utilizando Nginx y dos servidores web backend (Nginx y Apache) ejecutados en contenedores Docker. El proxy escucha en los puertos 8080 y 8081, y redirige el tráfico a los servicios correspondientes.
+
+Ejecución:
+
+``` bash
+docker-compose up -d
+```
+
+![Ejecución docker-compose - ejem09](/images/9-image1.png)
+
+### Arquitectura
+- **reverseproxy:** Contenedor Nginx que actúa como proxy inverso. Expone los puertos 8080 y 8081 hacia el host.
+
+- **nginx:** Contenedor Nginx que sirve el contenido de site1.
+
+- **apache:** Contenedor Apache que sirve el contenido de site2.
+
+Todos los servicios se comunican a través de una red interna mi-red (tipo bridge). El proxy resuelve los nombres nginx y apache mediante el DNS interno de Docker.
+
+### Flujo de peticiones
+- Petición a http://localhost:8080 → Proxy (puerto 8080) → Redirige a nginx:80 → Muestra site1.
+
+- Petición a http://localhost:8081 → Proxy (puerto 8081) → Redirige a apache:80 → Muestra site2.
+
+![site1 y site2 - ejem09](/images/9-image2.png)
 
 
 ### [**Subir ⬆**](#actividad-dad-05-05)
