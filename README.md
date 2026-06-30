@@ -123,18 +123,18 @@
 
     ![ejecución docker-compose - ejem07](/images/07-image2.png)
 
-    ![contenedores - ejem07](/images/7-image3.png)
+    ![contenedores - ejem07](/images/07-image3.png)
 
 2. Ingresar a php
 
-    ![Creación de la tabla - ejem07](/images/7-image4.png)
+    ![Creación de la tabla - ejem07](/images/07-image4.png)
 
 3. Crear la tabla que está en `mariadb/sql/init-db.sql`
-    ![Creación de la tabla - ejem07](/images/7-image5.png)
+    ![Creación de la tabla - ejem07](/images/07-image5.png)
 
-    ![Tabla - ejem07](/images/7-image6.png)
+    ![Tabla - ejem07](/images/07-image6.png)
 
-    ![Conexión frontend con db - ejem07](/images/7-image7.png)
+    ![Conexión frontend con db - ejem07](/images/07-image7.png)
 
 ---
 # Actividad 16-06
@@ -151,7 +151,7 @@ Ejecución:
 docker-compose up -d
 ```
 
-![Ejecución docker-compose - ejem09](/images/9-image1.png)
+![Ejecución docker-compose - ejem09](/images/09-image1.png)
 
 ### Arquitectura
 - **reverseproxy:** Contenedor Nginx que actúa como proxy inverso. Expone los puertos 8080 y 8081 hacia el host.
@@ -167,7 +167,7 @@ Todos los servicios se comunican a través de una red interna mi-red (tipo bridg
 
 - Petición a http://localhost:8081 → Proxy (puerto 8081) → Redirige a apache:80 → Muestra site2.
 
-![site1 y site2 - ejem09](/images/9-image2.png)
+![site1 y site2 - ejem09](/images/09-image2.png)
 
 
 ### [**Subir ⬆**](#diseño-y-arquitectura-de-despliegue)
